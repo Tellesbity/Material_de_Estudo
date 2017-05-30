@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#define NUM_PESSOAS 20
+
+void main(){
+	
+	setlocale (LC_ALL, "portuguese"); 
+
+	char sexo;
+	int i, idade, qtd_filhos, cont_renda=0, cont_ano=0;
+	char nome[30];
+	float renda, cont_filho=0, cont_mulher=0, cont_homem=0;
+
+	for (i=0; i<NUM_PESSOAS; i++){
+
+		system ("cls");
+   		printf ("\n");
+   		printf ("\t\t%c--------------------------------------%c",201,187);
+   		printf ("\n\t\t|    Programa de entrevista digital    |\n");
+    	        printf ("\t\t%c--------------------------------------%c\n\n",201,187);
+    	        printf ("\n");
+
+			printf("\n * Candidato número %i \n", i);
+			printf("\n");
+
+			printf("\n * Informe o nome do candidato: ");
+			scanf("%s", nome);
+
+			printf("\n * Informe a idade do candidato: ");
+			scanf("%d", &idade);
+
+			printf("\n * Digite a renda do candidato: ");
+			scanf("%f", &renda);
+
+			printf("\n * Digite o número de filhos do candidato: ");
+			scanf("\n%d", &qtd_filhos);
+
+			printf("\n * Digite o sexo do candidato (Use [F] para feminino e [M] para masculino): ");
+			scanf("\n%c", &sexo);
+
+				if (renda>=500) cont_renda++;
+				if (qtd_filhos>=1) cont_filho++;
+				if (idade>=16) cont_ano++;
+				if (sexo=='f' || sexo =='F'){
+					cont_mulher++;
+				}else{
+					cont_homem++;
+		}
+	}
+		system ("cls");
+   		printf ("\n");
+   		printf ("\t\t%c--------------------------------------%c",201,187);
+   		printf ("\n\t\t|         RESULTADOS OBTIDOS           |\n");
+    	        printf ("\t\t%c--------------------------------------%c\n\n",201,187);
+    	        printf ("\n");
+
+			printf("\n================================================================================");
+			printf("\n O total de candidatos com renda superior a 500,00 Reais é de: %d Candidato(s).", cont_renda);
+			printf("\n");
+			printf("\n O percentual de candidatos que tem ao menos 1 filho é de: %.2f%% Candidato(s)", cont_filho/NUM_PESSOAS);
+			printf("\n");
+			printf("\n O total de pessoas nascidas a partir do ano 2000 é de: %d candidato(s)", cont_ano);
+			printf("\n");
+			printf("\n O percentual de candidatos do sexo feminino é de: %.2f%%" , cont_mulher/NUM_PESSOAS);
+			printf("\n");
+			printf("\n O percentual de candidatos do sexo masculino é de: %.2f%%", cont_homem/NUM_PESSOAS);
+			printf("\n");
+			printf("\n================================================================================");
+			printf("\n");
+}
