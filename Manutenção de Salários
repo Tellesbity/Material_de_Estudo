@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+	
+	setlocale (LC_ALL, "portuguese");
+	
+    int cargo;
+    float salario, aumento, salario_final;
+    
+    
+    printf("\nPROGRAMA DE MODIFICAÇÃO SALARIAL PARA PROFFISSIONAIS DA ÁREA DE CONSTRUÇÃO");
+    printf ("\nPara Servente digite: 1 ");
+    printf ("\nPara Pedreiro digite: 2 ");
+    printf ("\nPara Mestre digite: 3 ");
+    printf ("\nPara TST digite: 4 ");
+    printf("\n");
+    printf ("\nDigite o numero do cargo do funcionário: "); 
+    scanf ("%d", &cargo);
+    printf ("\nDigite o valor do salario do funcionário: ");
+    scanf ("%f", &salario);
+    switch (cargo) {
+           case 1 : 
+                aumento = salario * 0.4;
+                salario_final = salario + aumento;
+                printf ("\nO Servente teve aumento de R$%.2f e agora recebe R$%.2f\n", aumento, salario_final);
+             break;
+           case 2 :                 
+                aumento = salario * 0.35;
+                salario_final = salario + aumento;
+                printf ("\nO Pedreiro teve aumento de R$%.2f e agora recebe R$%.2f\n", aumento, salario_final);
+             break;
+           case 3 :                 
+                aumento = salario * 0.20;
+                salario_final = salario + aumento;
+                printf ("\nO Mestre de Obras teve aumento de R$%.2f e agora recebe R$%.2f\n", aumento, salario_final);
+             break;
+           case 4 :                 
+                aumento = salario * 0.10;
+                salario_final = salario + aumento;
+                printf ("\nO Técnico de Seguranca teve aumento de R$%.2f e agora recebe R$%.2f\n", aumento, salario_final);
+			break;
+			 default:
+				printf ("\nO código inserido está incorreto!");
+			break;
+    }
+    
+	return (0);
+}
