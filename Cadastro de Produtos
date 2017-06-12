@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <locale.h>
+	struct produto
+	
+	{
+		int codigo, saldo;
+		char descricao[20];
+		float preco;
+		
+	};
+	
+	main (){
+		
+		setlocale (LC_ALL,"portuguese");
+		
+		produto ficha;
+		
+			printf("\n Digite o código do produto: ");
+			scanf("%d", &ficha.codigo);
+			printf("\n Digite a descrição do produto: ");
+			scanf("%s", ficha.descricao);
+			printf("\n Digite o preço do produto: ");
+			scanf("%f", &ficha.preco);
+			printf("\n Digite o saldo do produto: ");
+			scanf("%d", &ficha.saldo);
+			
+			
+			printf("\n Código: %d", ficha.codigo);
+			printf("\n Descrição : %s", ficha.descricao);
+			printf("\n Preço: %.2f", ficha.preco);
+			printf("\n Saldo: %d", ficha.saldo);
+			
+		return(0);
+		
+	}
